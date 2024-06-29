@@ -1,8 +1,8 @@
 // src/App.js
 import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Banner from './components/Banner';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import Banner from './Components/Banner';
 import './App.css';
 
 const App = () => {
