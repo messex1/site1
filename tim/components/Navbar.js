@@ -8,9 +8,9 @@ const Navbar = () => {
     <nav className="flex flex-col lg:flex-row items-center justify-between p-4 bg-gray-800 text-white">
       <div className="flex items-center">
         <Image
-          src="/my_future_canada_logo.svg"
+          src="/myfuturecanadalogo.svg"
           alt="My Future Canada Logo"
-          width={50}
+          width={200}
           height={50}
           className="w-12 h-auto md:w-16"
           priority

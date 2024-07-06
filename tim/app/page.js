@@ -7,13 +7,14 @@ export default function Home() {
     <div>
       <Navbar />
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div className="relative flex place-items-center z-[-1]">
+        <div className="relative w-full h-auto flex justify-center items-center bg-cover bg-center">
           <Image
-            src="/my_future_canada_logo.svg"
+            src="/myfuturecanadalogo.svg"
             alt="My Future Canada Logo"
-            width={180}
-            height={37}
-            className="w-24 md:w-32 lg:w-40 h-auto"
+            layout="responsive"
+            width={100}
+            height={24}
+            className="w-full h-auto"
             priority
           />
         </div>
