@@ -2,24 +2,20 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-gray-800 p-4 text-white">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center space-x-4">
-          <Link href="/" legacyBehavior>
-            <a className="text-white text-lg font-medium">
-              <img src="/myfuturecanadalogo.svg" alt="My Future Canada Logo" className="h-8" />
-            </a>
+        <div className="flex items-center">
+          <Link href="/" className="text-2xl font-bold mr-4">
+            My Future Canada
           </Link>
-          <div className="text-white text-lg font-medium text-center flex-grow">
-            My Future Canada System Dashboard
-          </div>
+          <span className="text-lg font-medium">System Dashboard</span>
         </div>
-        <div className="flex space-x-4">
-          <Link href="/rcic-login" legacyBehavior>
-            <a className="text-white">RCIC Login</a>
+        <div className="flex items-center space-x-4">
+          <Link href="/rcic-login" className="hover:text-gray-300">
+            RCIC Login
           </Link>
-          <Link href="/client-login" legacyBehavior>
-            <a className="text-white">Client Login</a>
+          <Link href="/client-login" className="hover:text-gray-300">
+            Client Login
           </Link>
         </div>
       </div>
