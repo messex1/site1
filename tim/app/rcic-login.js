@@ -1,11 +1,23 @@
+"use client";
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function RcicLogin() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Implement your login logic here
+    console.log('Username:', username, 'Password:', password);
+    // Redirect to RCIC Dashboard after successful login
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="border p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-semibold mb-4">RCIC Login</h1>
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label htmlFor="username" className="block text-sm font-medium text-gray-700">
               Username:
@@ -15,6 +27,8 @@ export default function RcicLogin() {
               id="username"
               name="username"
               className="mt-1 p-2 w-full border rounded-md"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
@@ -27,6 +41,8 @@ export default function RcicLogin() {
               id="password"
               name="password"
               className="mt-1 p-2 w-full border rounded-md"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
@@ -38,7 +54,7 @@ export default function RcicLogin() {
           </button>
         </form>
       </div>
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <a className="mt-4 text-blue-600">Back to Home</a>
       </Link>
     </div>
