@@ -1,23 +1,31 @@
-'use client';  // Add this directive at the top
+'use client';
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function ClientLogin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your login logic here
-    console.log('Logging in with:', { username, password });
+    if (username && password) {
+      localStorage.setItem('username', username);
+      router.push('/client-dashboard');
+    } else {
+      setError('Please enter a valid username and password');
+    }
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="border p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-semibold mb-4">Client Login</h1>
-        <form onSubmit={handleLogin}>
+        {error && <p className="text-red-500 mb-4">{error}</p>}
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="username" className="block text-sm font-medium text-gray-700">
               Username:
@@ -26,9 +34,9 @@ export default function ClientLogin() {
               type="text"
               id="username"
               name="username"
+              className="mt-1 p-2 w-full border rounded-md text-black"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="mt-1 p-2 w-full border rounded-md"
               required
             />
           </div>
@@ -40,9 +48,9 @@ export default function ClientLogin() {
               type="password"
               id="password"
               name="password"
+              className="mt-1 p-2 w-full border rounded-md text-black"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 p-2 w-full border rounded-md"
               required
             />
           </div>
