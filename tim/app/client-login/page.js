@@ -1,3 +1,5 @@
+'use client';  // Add this directive at the top
+
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -7,9 +9,8 @@ export default function ClientLogin() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Implement your login logic here
-    console.log('Username:', username, 'Password:', password);
-    // Redirect to Client Dashboard after successful login
+    // Add your login logic here
+    console.log('Logging in with:', { username, password });
   };
 
   return (
@@ -25,9 +26,9 @@ export default function ClientLogin() {
               type="text"
               id="username"
               name="username"
-              className="mt-1 p-2 w-full border rounded-md"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              className="mt-1 p-2 w-full border rounded-md"
               required
             />
           </div>
@@ -39,9 +40,9 @@ export default function ClientLogin() {
               type="password"
               id="password"
               name="password"
-              className="mt-1 p-2 w-full border rounded-md"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="mt-1 p-2 w-full border rounded-md"
               required
             />
           </div>
