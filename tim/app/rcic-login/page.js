@@ -1,17 +1,17 @@
+"use client";
+
 import Link from 'next/link';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function RcicLogin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement your login logic here
-    console.log('Username:', username, 'Password:', password);
-    // Simulate a successful login and redirect to RCIC Dashboard
+    // Handle login logic here
     router.push('/rcic-dashboard');
   };
 
@@ -19,7 +19,7 @@ export default function RcicLogin() {
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="border p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-semibold mb-4">RCIC Login</h1>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="username" className="block text-sm font-medium text-gray-700">
               Username:

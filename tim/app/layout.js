@@ -1,13 +1,11 @@
-// layout.js
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import '../styles/globals.css';
 
-export default function Layout({ children }) {
+export default function RootLayout({ children }) {
   return (
-    <div>
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
-    </div>
+    <html lang="en">
+      <body>
+        {children}
+      </body>
+    </html>
   );
 }

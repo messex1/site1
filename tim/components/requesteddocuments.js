@@ -1,4 +1,6 @@
-// components/RequestedDocuments.js
+"use client";
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 const RequestedDocuments = () => {
