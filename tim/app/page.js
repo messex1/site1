@@ -13,10 +13,9 @@ export default function Home() {
             <Image
               src="/myfuturecanadalogo.svg"
               alt="My Future Canada Logo"
-              layout="responsive"
               width={100}
               height={50}
-              className="object-contain"
+              className="object-contain w-full"
               priority
             />
           </div>

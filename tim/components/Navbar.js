@@ -1,26 +1,18 @@
-"use client";
-import { useState } from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <nav className="bg-gray-800 p-4 text-white">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center">
-          <Link href="/" className="text-2xl font-bold mr-4">
-            My Future Canada
-          </Link>
-          <span className="text-lg font-medium">System Dashboard</span>
-        </div>
-        <div className="flex items-center space-x-4">
-          <Link href="/rcic-login" className="hover:text-gray-300">
-            RCIC Login
-          </Link>
-          <Link href="/client-login" className="hover:text-gray-300">
-            Client Login
-          </Link>
-        </div>
+    <nav className="flex justify-between items-center p-4 shadow-md bg-gray-800">
+      <div className="flex-1 text-center">
+        <h1 className="text-2xl font-bold italic" style={{ fontFamily: 'Open Sans, sans-serif' }}>My Future Canada - System Dashboard  </h1>
+      </div>
+      <div className="flex-1 flex justify-end space-x-4">
+        <Link href="/rcic-login" legacyBehavior>
+          <a className="text-blue-500 hover:underline">RCIC Login</a>
+        </Link>
+        <Link href="/client-login" legacyBehavior>
+          <a className="text-blue-500 hover:underline">Client Login</a>
+        </Link>
       </div>
     </nav>
   );
