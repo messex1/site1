@@ -2,34 +2,23 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function ClientLogin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username && password) {
-      localStorage.setItem('username', username);
-      router.push('/client-dashboard');
-    } else {
-      setError('Please enter a valid username and password');
-    }
+    // Handle login logic here
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="border p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-semibold mb-4">Client Login</h1>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-              Username:
-            </label>
+            <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username:</label>
             <input
               type="text"
               id="username"
@@ -41,9 +30,7 @@ export default function ClientLogin() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password:
-            </label>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password:</label>
             <input
               type="password"
               id="password"
@@ -54,12 +41,7 @@ export default function ClientLogin() {
               required
             />
           </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md"
-          >
-            Login
-          </button>
+          <button type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded-md">Login</button>
         </form>
       </div>
       <Link href="/" legacyBehavior>

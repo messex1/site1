@@ -21,11 +21,11 @@ export default function Home() {
           </div>
         </div>
         <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-          <Link href="/rcic-login">
-            <a className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100">
+          <Link href="/rcic-login" legacyBehavior>
+            <a className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
               <h2 className="mb-3 text-2xl font-semibold">
                 RCIC Login{" "}
-                <span className="inline-block transition-transform group-hover:translate-x-1">
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                   -&gt;
                 </span>
               </h2>
@@ -34,16 +34,42 @@ export default function Home() {
               </p>
             </a>
           </Link>
-          <Link href="/client-login">
-            <a className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100">
+          <Link href="/rcic-signup" legacyBehavior>
+            <a className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
+              <h2 className="mb-3 text-2xl font-semibold">
+                RCIC Sign-Up{" "}
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                  -&gt;
+                </span>
+              </h2>
+              <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                Sign Up to begin the RCIC application process!.
+              </p>
+            </a>
+          </Link>
+          <Link href="/client-login" legacyBehavior>
+            <a className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
               <h2 className="mb-3 text-2xl font-semibold">
                 Client Login{" "}
-                <span className="inline-block transition-transform group-hover:translate-x-1">
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                   -&gt;
                 </span>
               </h2>
               <p className="m-0 max-w-[30ch] text-sm opacity-50">
                 Log in to your client account to view your application status.
+              </p>
+            </a>
+          </Link>
+          <Link href="/client-signup" legacyBehavior>
+            <a className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
+              <h2 className="mb-3 text-2xl font-semibold">
+                Client Sign-Up{" "}
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                  -&gt;
+                </span>
+              </h2>
+              <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                Sign Up to begin the application process!.
               </p>
             </a>
           </Link>

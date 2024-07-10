@@ -1,23 +1,29 @@
 "use client";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export default function RcicLogin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Implement your login logic here
-    console.log('Username:', username, 'Password:', password);
-    // Redirect to RCIC Dashboard after successful login
+    // Placeholder for actual login logic
+    if (username === 'testuser' && password === 'password') {
+      router.push('/rcic-dashboard');
+    } else {
+      setError('Invalid username or password');
+    }
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="border p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-semibold mb-4">RCIC Login</h1>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="username" className="block text-sm font-medium text-gray-700">
               Username:
@@ -26,7 +32,7 @@ export default function RcicLogin() {
               type="text"
               id="username"
               name="username"
-              className="mt-1 p-2 w-full border rounded-md"
+              className="mt-1 p-2 w-full border rounded-md text-black"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -40,12 +46,13 @@ export default function RcicLogin() {
               type="password"
               id="password"
               name="password"
-              className="mt-1 p-2 w-full border rounded-md"
+              className="mt-1 p-2 w-full border rounded-md text-black"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
+          {error && <p className="text-red-500">{error}</p>}
           <button
             type="submit"
             className="w-full bg-blue-600 text-white py-2 px-4 rounded-md"
